@@ -33,6 +33,17 @@ export const Header = () => {
             </Link>
           </Button>
           <Button
+            variant={isActive("/disciplinas") ? "default" : "ghost"}
+            size="sm"
+            asChild
+            className="gap-2"
+          >
+            <Link to="/disciplinas">
+              <BookOpen className="w-4 h-4" />
+              Disciplinas
+            </Link>
+          </Button>
+          <Button
             variant={isActive("/revisao") ? "default" : "ghost"}
             size="sm"
             asChild
@@ -41,17 +52,6 @@ export const Header = () => {
             <Link to="/revisao">
               <BookOpen className="w-4 h-4" />
               Revisão
-            </Link>
-          </Button>
-          <Button
-            variant={isActive("/calendario") ? "default" : "ghost"}
-            size="sm"
-            asChild
-            className="gap-2"
-          >
-            <Link to="/calendario">
-              <Calendar className="w-4 h-4" />
-              Calendário
             </Link>
           </Button>
         </nav>

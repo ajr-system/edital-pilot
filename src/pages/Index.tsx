@@ -1,6 +1,5 @@
 import { Header } from "@/components/Header/Header";
 import { StatsCard } from "@/components/Dashboard/StatsCard";
-import { Calendar } from "@/components/Dashboard/Calendar";
 import { UpcomingEvents } from "@/components/Dashboard/UpcomingEvents";
 import { SubjectsList } from "@/components/Dashboard/SubjectsList";
 import { StudyAlerts } from "@/components/Dashboard/StudyAlerts";
@@ -13,6 +12,11 @@ const Index = () => {
       <Header />
       
       <main className="container mx-auto px-6 py-8">
+        {/* Study Timer */}
+        <div className="mb-8 animate-fade-in">
+          <StudyTimer />
+        </div>
+
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 animate-fade-in">
           <StatsCard
@@ -37,21 +41,10 @@ const Index = () => {
           />
         </div>
 
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-          {/* Left Column - Calendar & Study Alerts side by side */}
-          <div className="lg:col-span-2 space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Calendar />
-              <StudyAlerts />
-            </div>
-          </div>
-
-          {/* Right Column - Timer & Events */}
-          <div className="space-y-6">
-            <StudyTimer />
-            <UpcomingEvents />
-          </div>
+        {/* Study Alerts & Upcoming Events */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <StudyAlerts />
+          <UpcomingEvents />
         </div>
 
         {/* Subjects List */}
