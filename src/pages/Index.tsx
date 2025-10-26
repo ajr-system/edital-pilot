@@ -39,10 +39,12 @@ const Index = () => {
 
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-          {/* Left Column - Calendar & Events */}
+          {/* Left Column - Calendar & Study Alerts side by side */}
           <div className="lg:col-span-2 space-y-6">
-            <Calendar />
-            <StudyAlerts />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Calendar />
+              <StudyAlerts />
+            </div>
           </div>
 
           {/* Right Column - Timer & Events */}
